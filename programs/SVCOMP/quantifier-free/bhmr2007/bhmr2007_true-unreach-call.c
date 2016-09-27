@@ -1,4 +1,6 @@
 // bhmr2007_true-unreach-call.c
+// Source: Dirk Beyer, Thomas A. Henzinger, Rupak Majumdar, Andrey
+// Rybalchenko: "Path Invariants", PLDI 2007.
 int main() {
     int i, n, a, b;
     i = 0; a = 0; b = 0;
