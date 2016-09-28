@@ -1,6 +1,7 @@
+// TODO: Define invariant manually
 #include "assert.h"
 
-void foo() {
+int main() {
 	int x, y, flag;
 	x = 0;
 	y = 0;
@@ -21,4 +22,6 @@ void foo() {
 
 	asssert(x <= 102);
 	assert(y <= 51);
+
+	return 0;
 }
