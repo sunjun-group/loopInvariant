@@ -6,24 +6,25 @@ void main() {
   
   bound_var(h);
   bounding_var(n);
-  assume(n >=0 );
-  assume(n <=200); 
-  k=0;
-  i=n;
-  h = i+k;
+  assume(n >= 0 );
+  assume(n <= 200); 
+  k = 0;
+  i = n;
+  h = i + k;
+  // invariant (i >= 0)
   while( i > 0 ){
     i--;
     k++;
-    h = i+k;
+    h = i + k;
   }
 
   j = k;
   m = 0;
-  h = j+m;
+  h = j + m;
   while( j > 0 ) {
 	j--;
 	m++;
-	h = j+m;
+	h = j + m;
   }
   assert (i >= 0 );
 }

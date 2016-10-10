@@ -6,14 +6,16 @@ void main() {
 
   x = 0;
   m = 0;
+  // invariant (0 <= x <= n)
   while( x < n ) {
-    if(__BLAST_NONDET)
-	m = x;
+    if (__BLAST_NONDET) {
+	  m = x;
+    }
 	x++;
   }
   if( n > 0 )
-    {
-      assert( 0<=m);
-      assert(m<n);
-    }
+  {
+    assert(0 <= m);
+    assert(m < n);
+  }
 }

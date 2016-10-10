@@ -10,11 +10,12 @@ int main() {
 
   if ((cp1_off <= n1)); else goto END;
 
-  if ((n2 <= MAXDATA*2 - n1)); else goto END;
+  if ((n2 <= MAXDATA * 2 - n1)); else goto END;
 
+  // invariant (cp1_off + mc_i <= MAXDATA * 2)
   for (mc_i = 0; mc_i < n2; mc_i++) {
     /* OK */
-    assert (cp1_off+mc_i < MAXDATA * 2);
+    assert (cp1_off + mc_i < MAXDATA * 2);
     // data[cp1_off+mc_i] = msg[cp_off+mc_i];
   }
 

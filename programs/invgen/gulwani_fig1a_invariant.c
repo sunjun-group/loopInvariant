@@ -2,12 +2,13 @@
 
 int __BLAST_NONDET;
 void main() {
-  int x,y;
+  int x, y;
 
   x = -50;
+  // invariant (x < 0 || y > 0)
   while( x < 0 ) {
-	x = x+y;
+	x = x + y;
 	y++;
   }
-  assert(y>0);
+  assert(y > 0);
 }
