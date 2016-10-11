@@ -17,58 +17,57 @@ int x,y,z;
 
 main()
 { 
-  x=1;
-  while (x<n) {
-    z=1;
-    while (z+x<=n) {
-      y=z+x*2;
-      if (y>n) y=n+1;
+  x = 1;
+  while (x < n) {
+    z = 1;
+    while (z + x <= n) {
+      y = z + x * 2;
+      if (y > n) y = n + 1;
       //      merge(z,z+x,y);
-      l = z; r = z+x; u = y;
-      i=l; j=r; k=l;
-      while (i<r && j<u) { 
-	//	assert(0<=i);assert(i<=n);
-	//assert(0<=j);assert(j<=n);
-	if(__BLAST_NONDET) {
-	//if (a[i]<=a[j]) {
-	  //assert(0<=i);assert(i<=n);
-	  //assert(0<=k);assert(k<=n);
-	  //b[k]=a[i]; 
-	  i++;
-	} 
-	else {
-	  //assert(0<=j);assert(j<=n);
-	  //assert(0<=k);assert(k<=n);	  
-	  //b[k]=a[j]; 
-	  j++;
-	}
-	k++;
+      l = z; r = z + x; u = y;
+      i = l; j = r; k = l;
+      while (i < r && j < u) { 
+	      //	assert(0<=i);assert(i<=n);
+	      //assert(0<=j);assert(j<=n);
+	      if(__BLAST_NONDET) {
+	        //if (a[i]<=a[j]) {
+	        //assert(0<=i);assert(i<=n);
+	        //assert(0<=k);assert(k<=n);
+	        //b[k]=a[i]; 
+	        i++;
+	      } 
+	      else {
+	        //assert(0<=j);assert(j<=n);
+	        //assert(0<=k);assert(k<=n);	  
+	        //b[k]=a[j]; 
+	        j++;
+	      }
+	      k++;
       }
       //assert(0<=r);assert(r<=n);
       
-      assert(k<=n);
+      assert(k <= n);
       
-      while (i<r) {
-	//assert(0<=i);assert(i<=n);
-	//assert(0<=k);assert(k<=n);
-	//b[k]=a[i]; 
-	i++; 
-	k++;
+      while (i < r) {
+	      //assert(0<=i);assert(i<=n);
+	      //assert(0<=k);assert(k<=n);
+	      //b[k]=a[i]; 
+	      i++; 
+	      k++;
       }
-      while (j<u) { 
-	//assert(0<=j);assert(j<=n);
-	//assert(0<=k);assert(k<=n);
-	//b[k]=a[j]; 
-	j++; k++;
+      while (j < u) { 
+	      //assert(0<=j);assert(j<=n);
+	      //assert(0<=k);assert(k<=n);
+	      //b[k]=a[j]; 
+	      j++; k++;
       }
       for (k=l; k<u; k++) { 
-	//assert(0<=k);assert(k<=n);
-	//a[k]=b[k]; 
+	      //assert(0<=k);assert(k<=n);
+	      //a[k]=b[k]; 
       }
-      
-      z=z+x*2;
+      z = z + x * 2;
     }
-    x=x*2;
+    x = x * 2;
   }
 }
 

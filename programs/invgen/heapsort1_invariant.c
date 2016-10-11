@@ -14,36 +14,28 @@ int main( int argc, char *argv[]){
   } else {
     r--;
   }
+  // invariant (r <= n)
   while(r > 1) {
     i = l;
     j = 2*l;
     while(j <= r) {
       if( j < r) {
-	assert(1 <= j);
-	assume(j <= n);
-	assume(1 <= j+1);assume(j+1 <= n);
 	if( NONDET )
 	  j = j + 1;
       }
-      assume(1 <= j);assume(j <= n);
-      /*      if( NONDET ) { 
+      if( NONDET ) { 
       	break;
-	}
-      */
-      assume(1 <= i);
-      assume(i <= n);
-      assume(1 <= j);
-      assume(j <= n);
+      }
       i = j;
       j = 2*j;
     }
     if(l > 1) {
-      assume(1 <= l);assume(l <= n);
       l--;
     } else {
-      assume(1 <= r);assume(r <= n);
+      assert(r <= n);
       r--;
     }
   }
   return 0;
 }
+

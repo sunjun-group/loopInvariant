@@ -13,7 +13,7 @@ void main()
 
   if( n < lda); else goto END; 
   if( 0 <= n ); else goto END; 
-//*info = 0;
+  //*info = 0;
   nm1 = n - 1;
   if (nm1 >=  0) {
     for (k = 0; k < nm1; k++) {

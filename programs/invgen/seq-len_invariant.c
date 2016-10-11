@@ -1,0 +1,56 @@
+#include "assert.h"
+
+int main(int argc, char *argv[]) {
+  int n0, n1,n2;
+  int i = 0;
+  int k = 0;
+
+  tmpl("(le(n0,n1,i,k),le(n0,n1,i,k))");
+
+  // invariant (0 <= i && i <= n0)
+  // invariant (k == i)
+  while( i < n0 ) {
+    i++;
+    k++;
+  }
+  i = 0;
+  // invariant (0 <= i && i <= n1)
+  // invariant (k == i + n0)
+  while( i < n1 ) {
+    i++;
+    k++;
+  }
+
+  i = 0;
+  // invariant (0 <= i && i <= n2)
+  // invariant (k == i + n0 + n1)
+  while( i < n2 ) {
+    i++;
+    k++;
+  }
+
+  i = 0;
+  // invariant (0 <= i && i <= n2)
+  // invariant (k + i == n0 + n1 + n2)
+  while( i < n2 ) {
+    i++;
+    k--;
+  }
+
+  i = 0;
+  // invariant (0 <= i && i <= n1)
+  // invariant (k + i == n0 + n1)
+  while( i < n1 ) {
+    i++;
+    k--;
+  }
+  i = 0;
+  // invariant (0 <= i && i <= n0)
+  // invariant (k + i == n0)
+  while( i < n0 ) {
+    assert(k > 0);
+    i++;
+    k--;
+  }
+  return 0;
+}

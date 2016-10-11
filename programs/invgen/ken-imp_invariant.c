@@ -1,0 +1,13 @@
+void main() {
+  int i;
+  int j;
+  int x = i;
+  int y = j;
+  // invariant (x - y == i - j)
+  while(x != 0) {
+	  x--;
+	  y--;
+  }
+  if(i==j)
+	  if(y != 0) ERROR:;
+}
